@@ -1,0 +1,13 @@
+graph TD;
+    title[Citação Inicial Pessoa Jurídica]
+    title--> A;
+    A[Petição Inicial] -->|Despacho do Juízo| B[Citação por AR ou Oficial de Justiça];
+    B -->|AR Positivo| C[Fim do Procedimento];
+    B -->|AR Negativo| D[Verificar endereço na JUCER e requerer nova citação por oficial de justiça];
+    D -->|Novo Endereço| B;
+    D -->|Endereço não encontrado| E[Citação por Edital da Empresa e Redirecionamento ao Sócio Administrador];
+    E --> F[Fim do Procedimento];
+    B -->|Citação por Oficial de Justiça Positiva| C;
+    B -->|Citação por Oficial de Justiça Negativa| G[Verificar Endereço na JUCER];
+    G -->|Novo Endereço| B;
+    G -->|Endereço não encontrado| E;
